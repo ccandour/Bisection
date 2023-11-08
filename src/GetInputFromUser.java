@@ -11,11 +11,14 @@ class GetInputFromUser {
         System.out.println("Enter the second point (double) : ");
         double second = in.nextDouble();
 
-        System.out.println("Enter maximum number of iterations (int) : ");
-        int iterations = in.nextInt();
+        Main.a = Math.min(first, second);
+        Main.b = Math.max(first, second);
 
-        System.out.println("Enter desired precision (double) : ");
-        double precision = in.nextDouble();
+        System.out.println("Enter maximum number of iterations (int) : ");
+        Main.maxSteps = in.nextInt();
+
+        System.out.println("Enter desired tolerance (double) : ");
+        Main.tolerance = in.nextDouble();
 
         in.close();
     }
