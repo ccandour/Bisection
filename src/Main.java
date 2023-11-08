@@ -4,8 +4,6 @@ public class Main {
     public static double a;
     public static double b;
     public static void main(String[] args) {
-        while (true);
-
         /*
         N ← 1
         while N ≤ NMAX do // limit iterations to prevent infinite loop
@@ -22,10 +20,33 @@ public class Main {
 
     }
     public static double calculate() throws Exception {
-        if (f(a) * f(b) < 0) {
+        // a -> first point
+        // b -> second point
+        // c -> midpoint
 
+        if (f(a) * f(b) > 0) {
+            throw new Exception("The set points have the same sign");
         }
-        throw new Exception("something went wrong");
+
+        int currentStep = 1;
+        double c;
+
+        while (currentStep < maxSteps) {
+            // calculate new midpoint
+            c = (a + b) / 2;
+
+            // if reached 0 or is in tolerance, return midpoint
+            if (f(c) == 0 && (b - a) / 2 < tolerance) return c;
+
+            // increment step counter
+            currentStep++;
+
+            // calulate first or second point
+            if (f(c) * f(a) > 0) a = c;
+            else b = c;
+        }
+
+        throw new Exception("something went terribly wrong");
     }
 
     public static double f(double x) {
