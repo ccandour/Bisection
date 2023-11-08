@@ -1,10 +1,10 @@
 public class Main {
-    int MAX_STEPS;
-    int TOLERANCE;
+    public static int maxSteps;
+    public static int tolerance;
+    public static double a;
+    public static double b;
     public static void main(String[] args) {
-        int n = 1;
-        int
-        while ()
+        while (true);
 
         /*
         N ← 1
@@ -20,5 +20,15 @@ public class Main {
         Output("Method failed.") // max number of steps exceeded
         */
 
+    }
+    public static double calculate() throws Exception {
+        if (f(a) * f(b) < 0) {
+
+        }
+        throw new Exception("something went wrong");
+    }
+
+    public static double f(double x) {
+        return x * x - 10;
     }
 }
