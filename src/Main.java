@@ -1,6 +1,6 @@
 public class Main {
     public static int maxSteps;
-    public static int tolerance;
+    public static double tolerance;
     public static double a;
     public static double b;
     public static void main(String[] args) {
