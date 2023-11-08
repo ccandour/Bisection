@@ -1,9 +1,10 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 class GetInputFromUser {
-    public static void main(String args[]) {
+    public static void getInput() {
         // Using Scanner for Getting Input from User
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
 
         System.out.println("Enter the first point (double) : ");
         double first = in.nextDouble();
