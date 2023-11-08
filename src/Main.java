@@ -3,7 +3,9 @@ public class Main {
     public static double tolerance;
     public static double a;
     public static double b;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        GetInputFromUser.getInput();
+        System.out.println(calculate());
         /*
         N ← 1
         while N ≤ NMAX do // limit iterations to prevent infinite loop
@@ -29,7 +31,7 @@ public class Main {
         }
 
         int currentStep = 1;
-        double c;
+        double c = -999999999;
 
         while (currentStep < maxSteps) {
             // calculate new midpoint
@@ -45,8 +47,7 @@ public class Main {
             if (f(c) * f(a) > 0) a = c;
             else b = c;
         }
-
-        throw new Exception("something went terribly wrong");
+        return c;
     }
 
     public static double f(double x) {
